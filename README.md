@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PinSphere 📌
 
-## Getting Started
+A modern, fast, and fully functional Pinterest clone built with Next.js and Tailwind CSS. PinSphere allows users to explore, create, save, and share ideas through an intuitive and responsive masonry grid interface.
 
-First, run the development server:
+## 🚀 Live Demo
+**[View Live Project Here](https://your-vercel-demo-link.vercel.app/)**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Fluid Masonry Layout:** Pure CSS-based, lightweight multi-column layout for rendering images seamlessly without heavy JavaScript calculations.
+- **Dark & Light Mode:** Complete theme support with a manual toggle in the navigation bar, ensuring accessibility and a premium feel.
+- **Robust State Management:** Built using React Context API to manage global states like 'Saved Pins', 'Created Pins', and 'Notifications' instantly across the app.
+- **Interactive Pin Details:** Dynamic routing (`/pin/[id]`) featuring live simulated commenting and one-click URL sharing via the Clipboard API.
+- **Pin Creation:** A user-friendly modal interface allowing users to add new visual ideas to the global feed instantly.
+- **Profile Dashboard:** A personalized space with dedicated tabs to track and manage 'Created' and 'Saved' pins.
+- **Event Delegation & Bubbling Fixes:** Optimized click handlers on nested components (like save buttons over image links) for flawless UX.
+- **Fully Responsive:** Mobile-first approach ensuring the UI looks perfect on phones, tablets, and large desktop screens.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework:** [Next.js 14+](https://nextjs.org/) (App Router)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) 
+- **State Management:** React Context API & Hooks (`useState`, `useEffect`)
+- **Deployment:** Vercel
 
-## Learn More
+## ⚙️ Getting Started (Local Development)
 
-To learn more about Next.js, take a look at the following resources:
+Follow these steps to set up the project locally on your machine.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/yourusername/pinsphere.git](https://github.com/yourusername/pinsphere.git)
+   cd pinsphere
