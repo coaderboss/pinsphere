@@ -31,3 +31,41 @@ Follow these steps to set up the project locally on your machine.
    ```bash
    git clone [https://github.com/yourusername/pinsphere.git](https://github.com/yourusername/pinsphere.git)
    cd pinsphere
+
+   Install dependencies:
+
+Bash
+npm install
+(or yarn install / pnpm install depending on your package manager)
+
+Start the development server:
+
+Bash
+npm run dev
+Open your browser:
+Navigate to http://localhost:3000 to view the application in action.
+
+📂 Project Structure
+Plaintext
+├── app/                  # Next.js App Router (Routes: /, /profile, /pin/[id], /settings)
+├── components/           # Reusable UI elements (Navbar, PinCard, MasonryGrid, Modals)
+├── context/              # AppContext for global application state
+├── data/                 # Mock data for initial rendering (Pins, Categories, Boards)
+└── globals.css           # Global stylesheets including custom masonry CSS
+🚀 Future Enhancements
+While this version operates with a robust mock state management system for frontend demonstration, future iterations will include:
+
+Integration with a backend (Node.js/Express) and Database (MongoDB/PostgreSQL).
+
+Real-time image uploads using Cloudinary or AWS S3.
+
+User Authentication via NextAuth.js.
+
+Infinite scrolling using the Intersection Observer API for performance optimization.
+
+Designed and Developed for frontend technical assessment.
+
+
+***
+
+**Pro Tip:** Jo links `[https://your-vercel-demo-link.vercel.app/](https://your-verce
