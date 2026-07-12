@@ -6,16 +6,20 @@ const adjectives = ["Beautiful", "Stunning", "Amazing", "Cozy", "Modern", "Vinta
 const nouns = ["Mountain", "Beach", "Dish", "Outfit", "Room", "Painting", "Puppy", "Gadget", "Garden", "Sunset"];
 
 function generatePin(id) {
-  const cat = categories[Math.floor(Math.random() * categories.length)];
-  const adj = adjectives[Math.floor(Math.random() * adjectives.length)];
-  const noun = nouns[Math.floor(Math.random() * nouns.length)];
-  const width = 600 + Math.floor(Math.random() * 100);
-  const height = 400 + Math.floor(Math.random() * 600); // variable height for masonry
+  // Math.random() hata kar id ke base par deterministic logic lagaya hai
+  const cat = categories[id % categories.length];
+  const adj = adjectives[(id + 2) % adjectives.length]; // +2 thoda mix karne ke liye
+  const noun = nouns[(id + 5) % nouns.length];
+  
+  const width = 600 + (id % 50) * 2;
+  const height = 400 + (id % 100) * 4; 
+  
   const imageUrl = `https://picsum.photos/${width}/${height}?random=${id}`;
   const title = `${adj} ${noun} ${cat}`;
   const description = `A ${adj.toLowerCase()} ${noun.toLowerCase()} related to ${cat.toLowerCase()}. Perfect for your board.`;
-  const author = `User${Math.floor(Math.random() * 1000)}`;
-  const authorAvatar = `https://i.pravatar.cc/40?img=${(id % 70)}`; // some avatars
+  const author = `User${id * 10}`;
+  const authorAvatar = `https://i.pravatar.cc/40?img=${(id % 70)}`; 
+  
   return { id, imageUrl, title, description, author, authorAvatar };
 }
 

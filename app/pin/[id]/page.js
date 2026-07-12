@@ -36,8 +36,7 @@ export default function PinDetailPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors">
-      <div className="sticky top-0 z-40 bg-white dark:bg-gray-800 shadow-sm px-4 py-3 flex items-center gap-4">
-        <button onClick={() => router.back()} className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full">
+    <div className="sticky top-0 z-40 bg-white dark:bg-gray-800 shadow-sm px-2 sm:px-4 py-3 flex items-center gap-2 sm:gap-4 transition-colors">        <button onClick={() => router.back()} className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full">
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
         </button>
         <h1 className="font-bold text-lg truncate">{pin.title}</h1>

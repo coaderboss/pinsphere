@@ -1,4 +1,3 @@
-// components/MasonryGrid.jsx
 'use client';
 import { useState, useEffect } from 'react';
 import { useAppContext } from '@/context/AppContext';
@@ -6,15 +5,15 @@ import PinCard from './PinCard';
 import LoadMoreButton from './LoadMoreButton';
 
 export default function MasonryGrid() {
-  const { pins } = useAppContext(); // already filtered
+  const { pins } = useAppContext();
   const [columns, setColumns] = useState(4);
   const [visibleCount, setVisibleCount] = useState(10);
 
   useEffect(() => {
     function handleResize() {
-      if (window.innerWidth < 640) setColumns(2);
-      else if (window.innerWidth < 1024) setColumns(3);
-      else setColumns(4);
+      if (window.innerWidth < 640) setColumns(2); // Phone ke liye perfect 2 columns layout
+      else if (window.innerWidth < 1024) setColumns(3); // Tablet ke liye 3
+      else setColumns(4); // Laptop/Desktop ke liye 4
     }
     handleResize();
     window.addEventListener('resize', handleResize);
@@ -28,7 +27,6 @@ export default function MasonryGrid() {
     setVisibleCount(prev => prev + 10);
   };
 
-  // Distribute into columns
   const columnArray = Array.from({ length: columns }, () => []);
   pinsToShow.forEach((pin, index) => {
     columnArray[index % columns].push(pin);
@@ -36,9 +34,10 @@ export default function MasonryGrid() {
 
   return (
     <div>
-      <div className="flex gap-4 px-4">
+      {/* Mobile me gap-2 aur desktop me gap-4 kiya hai */}
+      <div className="flex gap-2 sm:gap-4 px-2 sm:px-4">
         {columnArray.map((colPins, colIndex) => (
-          <div key={colIndex} className="flex-1">
+          <div key={colIndex} className="flex-1 min-w-0">
             {colPins.map(pin => (
               <PinCard key={pin.id} pin={pin} />
             ))}
